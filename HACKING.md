@@ -5,15 +5,15 @@ what you need to know to get started hacking on Nativefier.
 
 ## Guidelines
 
-1. **Before starting work on a huge change, gauge the interest**
+1. ~~**Before starting work on a huge change, gauge the interest**
    of community & maintainers through a GitHub issue. For big changes,
    create a **[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)**
-   issue to enable a good peer review.
+   issue to enable a good peer review.~~ // The community no longer exists.
 
-2. Do your best to **avoid adding new Nativefier command-line options**.
+2. ~~Do your best to **avoid adding new Nativefier command-line options**.
    If a new option is inevitable for what you want to do, sure,
    but as much as possible try to see if you change works without.
-   Nativefier already has a ton of them, making it hard to use.
+   Nativefier already has a ton of them, making it hard to use.~~ // This was asinine when brother came up with it and it's even dumber now.
 
 3. Do your best to **limit breaking changes**.
    Only introduce breaking changes when necessary, when required by deps, or when
@@ -39,7 +39,9 @@ what you need to know to get started hacking on Nativefier.
    Also, an in-tree helper will always be less complex than a dep, as inherently
    more tailored to our use case, and less complexity is good.
 
-5. Use **types**, avoid `any`, write **tests**.
+5. If you do add dependencies, **unfuck them** because `node`'s dependency tracking is hot garbage from the ancient mists of time before software existed.
+
+5. Use **types**, avoid `any`, ~~write **tests**~~. // Bro, your tests are literally the first thing that wouldn't compile. Fuck you and your tests.
 
 6. **Document for users** in `API.md`
 
@@ -51,11 +53,12 @@ what you need to know to get started hacking on Nativefier.
 First, clone the project:
 
 ```bash
-git clone https://github.com/nativefier/nativefier.git
+git clone https://github.com/majick/nativefier.git
 cd nativefier
 ```
 
 Install dependencies (for both the CLI and the Electron app):
+_Note that half this shit doesn't work because `node` is hot trash._
 
 ```bash
 npm ci
@@ -137,6 +140,8 @@ When a new major [Electron release](https://github.com/electron/electron/release
 5. When confident enough, release it in a regression-spelunking-friendly way:
    1. If `master` has unreleased commits, make a patch/minor release with them, but without the major Electron bump.
    2. Commit your Electron major bump and release it as a major new Nativefier version. Help users identify the breaking change by using a bold **[BREAKING]** marker in `CHANGELOG.md` and in the GitHub release.
+   
+**Or, y'know, cowboy that shit in because bumping one dep field is not worth all this hassle for other people's platforms.**
 
 ### Deps updates
 
@@ -172,6 +177,8 @@ As [documented](https://docs.npmjs.com/cli/v6/configuring-npm/shrinkwrap-json),
 CLI tools like Nativefier should use shrinkwrap.
 
 ### Release
+
+**Bro, really? Just throw the tarball up there.**
 
 While on `master`, with no uncommitted changes, run:
 
@@ -253,3 +260,5 @@ These are the guidelines we (try to) follow when triaging [issues](https://githu
     plenty of articles documenting open-source burnout and trolls-induced misery.
     Find an article that speaks to you, and point problematic users to it.
     I like [Brett Cannon - The social contract of open source](https://snarky.ca/the-social-contract-of-open-source/).
+    
+11. **The number one way to not be abused by users** is to not have users. The number two way is to not give a shit what they think because you don't owe them anything. People being nice might deserve attention, but most people aren't nice. They're illiterate assholes.

@@ -1,4 +1,4 @@
-Note: Nativefier is unmaintained by the original author, please see https://github.com/nativefier/nativefier/issues/1577. Since the alternatives are all complete shit — go ahead, use Safari single site apps, I dare you — it's forked to majick/nativefier .
+Note: Nativefier is unmaintained by the original author, please see https://github.com/nativefier/nativefier/issues/1577. Since the alternatives are all complete shit — go ahead, use Safari single site apps, I dare you — it's forked to majick/nativefier. No, literally, the UX jank from Safari or Chrome apps is so not fucking worth it. I'd rather just maintain this code, even if just barely.
 
 # Nativefier
 
@@ -31,7 +31,7 @@ Whatsapp Web ([HN thread](https://news.ycombinator.com/item?id=10930718)). Nativ
 
 ## Installation
 
-Install Nativefier globally with `npm install -g nativefier` . Requirements:
+Install Nativefier with `npm install .` . Do not use the broken version that the original guy has submitted to whatever the npm package repo is. Use this code. Requirements:
 
 - macOS 10.13+ / Windows / Linux
 - [Node.js](https://nodejs.org/) ≥ 16.9 and npm ≥ 7.10
@@ -44,42 +44,27 @@ Optional dependencies:
   Be sure `wine` is in your `$PATH`.
 
 <details>
-  <summary>Or install with Docker (click to expand)</summary>
+  <summary>~~Or install with Docker (click to expand)~~ Deprecated all to shit</summary>
 
-  - Pull the image from [Docker Hub](https://hub.docker.com/r/nativefier/nativefier): `docker pull nativefier/nativefier`
-  - ... or build it yourself: `docker build -t local/nativefier .`
-    (in this case, replace `nativefier/` in the below examples with `local/`)
-
-  By default, `nativefier --help` will be executed.
-  To build e.g. a Gmail app into `~/nativefier-apps`,
-
-  ```bash
-  docker run --rm -v ~/nativefier-apps:/target/ nativefier/nativefier https://mail.google.com/ /target/
-  ```
-
-  You can pass Nativefier flags, and mount volumes to pass local files. E.g. to use an icon,
-
-  ```bash
-  docker run --rm -v ~/my-icons-folder/:/src -v $TARGET-PATH:/target nativefier/nativefier --icon /src/icon.png --name whatsApp -p linux -a x64 https://web.whatsapp.com/ /target/
-  ```
-</details>
+  Don't do this any more. You can build your own container, but dude uploaded his piece of crap version to the repo. I do not maintain your repos.
+ </details>
 
 <details>
-  <summary>Or install with Snap & AUR (click to expand)</summary>
+  <summary>~~Or install with Snap & AUR (click to expand)~~ Deprecated as fuck</summary>
 
-  These repos are *not* managed by Nativefier maintainers; use at your own risk.
-  If using them, for your security, please inspect the build script.
+  ~These repos are *not* managed by Nativefier maintainers; use at your own risk.
+  If using them, for your security, please inspect the build script.~
 
-  - [Snap](https://snapcraft.io/nativefier)
-  - [AUR](https://aur.archlinux.org/packages/nodejs-nativefier)
+  - ~~[Snap](https://snapcraft.io/nativefier)~~ // I don't give a fuck about an Ubuntu
+  - ~~[AUR](https://aur.archlinux.org/packages/nodejs-nativefier)~~ // I don't give a fuck about an Arch
 </details>
 
 ## Usage
 
-To create an app for medium.com, simply `nativefier 'medium.com'`
+To create an app for NTK, simply `nativefier 'http://www.ntk.net'`
 
 Nativefier will try to determine the app name, and well as other options that you
-can override. For example, to override the name, `nativefier --name 'My Medium App' 'medium.com'`
+can override. For example, to override the name, `nativefier --name 'My NTK App' 'http://www.ntk.net'`
 
 **Read the [API docs](API.md) or run `nativefier --help`**
 to learn about command-line flags and configure your app.
@@ -88,12 +73,14 @@ to learn about command-line flags and configure your app.
 
 **See [CATALOG.md](CATALOG.md) for site-specific ideas & workarounds contributed by the community**.
 
-If this doesn’t help, go look at our [issue tracker](https://github.com/nativefier/nativefier/issues).
+~~If this doesn’t help, go look at our [issue tracker](https://github.com/nativefier/nativefier/issues).~~ Or don't. Bro closed it and I don't want your issues.
 
 ## Development
 
-Help welcome on [bugs](https://github.com/nativefier/nativefier/issues?q=is%3Aopen+is%3Aissue+label%3Abug) and
-[feature requests](https://github.com/nativefier/nativefier/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request)!
+Help **un**welcome on [~~bugs~~](https://github.com/nativefier/nativefier/issues?q=is%3Aopen+is%3Aissue+label%3Abug) and
+[~~feature requests~~](https://github.com/nativefier/nativefier/issues?q=is%3Aopen+is%3Aissue+label%3Afeature-request)~~
+
+The original dude packed it up, and, seriously, I don't want to hear from your issues. Send a PR if you want, but don't hassle me about this code. You don't like it, you fix it, this isn't a community project. I don't even know how `node` works, and the last time I wrote JavaScript was in like 2003.
 
 Docs: [Developer / build / hacking](HACKING.md), [API / flags](API.md),
 [Changelog](CHANGELOG.md).
