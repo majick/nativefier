@@ -46,11 +46,11 @@ what you need to know to get started hacking on Nativefier.
 
 6. If you do add dependencies, **unfuck them** because `node`'s dependency tracking is hot garbage from the ancient mists of time before software existed.
 
-5. Use **types**, avoid `any`, ~~write **tests**~~. // Bro, your tests are literally the first thing that wouldn't compile. Fuck you and your tests.
+6. Use **types**, avoid `any`, ~~write **tests**~~. // Bro, your tests are literally the first thing that wouldn't compile. Fuck you and your tests.
 
-6. **Document for users** in `API.md`
+7. **Document for users** in `API.md`
 
-7. **Document for other devs** in comments, jsdoc, commits, PRs.
+8. **Document for other devs** in comments, jsdoc, commits, PRs.
    Say _why_ more than _what_, the _what_ is your code!
 
 ## Setup
@@ -113,16 +113,16 @@ but is painful to do manually. Do yourself a favor and install a
 
 ## Tests
 
-- To run all tests, `npm t`
-- To run only unit tests, `npm run test:unit`
-- To run only integration tests, `npm run test:integration`
-- Logging is suppressed by default in tests, to avoid polluting Jest output.
-  To get debug logs, `npm run test:withlog` or set the `LOGLEVEL` env. var.
-- For a good live experience, open two terminal panes/tabs running code/tests watchers:
-  1. Run a TSC watcher: `npm run build:watch`
-  2. Run a Jest unit tests watcher: `npm run test:watch`
-  3. Here is [a screencast of how the live-reload experience should look like](https://user-images.githubusercontent.com/522085/120407694-abdf3f00-c31b-11eb-9ab5-a531a929adb9.mp4)
-- Alternatively, you can run both test processes in the same terminal by running: `npm run watch`
+-   To run all tests, `npm t`
+-   To run only unit tests, `npm run test:unit`
+-   To run only integration tests, `npm run test:integration`
+-   Logging is suppressed by default in tests, to avoid polluting Jest output.
+    To get debug logs, `npm run test:withlog` or set the `LOGLEVEL` env. var.
+-   For a good live experience, open two terminal panes/tabs running code/tests watchers:
+    1. Run a TSC watcher: `npm run build:watch`
+    2. Run a Jest unit tests watcher: `npm run test:watch`
+    3. Here is [a screencast of how the live-reload experience should look like](https://user-images.githubusercontent.com/522085/120407694-abdf3f00-c31b-11eb-9ab5-a531a929adb9.mp4)
+-   Alternatively, you can run both test processes in the same terminal by running: `npm run watch`
 
 ## Maintainers corner
 
@@ -134,18 +134,18 @@ When a new major [Electron release](https://github.com/electron/electron/release
 2. Thoroughly digest the new version's [breaking changes](https://www.electronjs.org/docs/breaking-changes)
    (also via the [Releases page](https://github.com/electron/electron/releases) and [the blog](https://www.electronjs.org/blog/), the content is different),
    grepping our codebase for every changed API.
-   - If called for by the breaking changes, perform the necessary API changes
+    - If called for by the breaking changes, perform the necessary API changes
 3. Bump
-   - `src/constants.ts` / `DEFAULT_ELECTRON_VERSION` & `DEFAULT_CHROME_VERSION`
-   - `package.json / devDeps / electron`
-   - `app / package.json / devDeps / electron`
+    - `src/constants.ts` / `DEFAULT_ELECTRON_VERSION` & `DEFAULT_CHROME_VERSION`
+    - `package.json / devDeps / electron`
+    - `app / package.json / devDeps / electron`
 4. On Windows, macOS, Linux, test for regression and crashes:
-   1. With `npm test` and `npm run test:manual`
-   2. With extra manual testing
+    1. With `npm test` and `npm run test:manual`
+    2. With extra manual testing
 5. When confident enough, release it in a regression-spelunking-friendly way:
-   1. If `master` has unreleased commits, make a patch/minor release with them, but without the major Electron bump.
-   2. Commit your Electron major bump and release it as a major new Nativefier version. Help users identify the breaking change by using a bold **[BREAKING]** marker in `CHANGELOG.md` and in the GitHub release.
-   
+    1. If `master` has unreleased commits, make a patch/minor release with them, but without the major Electron bump.
+    2. Commit your Electron major bump and release it as a major new Nativefier version. Help users identify the breaking change by using a bold **[BREAKING]** marker in `CHANGELOG.md` and in the GitHub release.
+
 **Or, y'know, cowboy that shit in because bumping one dep field is not worth all this hassle for other people's platforms.**
 
 ### Deps updates
@@ -209,9 +209,9 @@ These are the guidelines we (try to) follow when triaging [issues](https://githu
 
 3. **Ask for clarification & details** when needed, and add a `need-info` label.
 
-   1. In particular, if the issue isn’t reproducible (e.g. a non-trivial bug
-      happening on an internal site), express that we can’t work without a
-      repro scenario, and flag as `need-info`.
+    1. In particular, if the issue isn’t reproducible (e.g. a non-trivial bug
+       happening on an internal site), express that we can’t work without a
+       repro scenario, and flag as `need-info`.
 
 4. **Label** issues with _category/sorting_ labels (e.g. `mac` / `linux` / `windows`,
    `bug` / `feature-request` ...) and _status_ labels (e.g. `upstream`, `wontfix`,
@@ -221,24 +221,24 @@ These are the guidelines we (try to) follow when triaging [issues](https://githu
    but closing _too_ ruthlessly frustrates and disappoints users, and does us a
    disservice of not having a clear honest backlog available to us & users. So,
 
-   1. When in doubt, leave issues open and triaged as `bug` / `feature-request`.
-      It’s okay, reaching 0 open issues is _not_ an objective. Or if it is,
-      it deserves to be a development objective, not a triage one.
-   2. That being said, do close what’s `upstream`, with a kind message.
-   3. Also do close bugs that have been `need-info` or `cannot-reproduce` for
-      too long (weeks / months), with a kind message explaining we’re okay to
-      re-open if the requested info / scenario is provided.
-   4. Finally, carefully close issues we do not want to address, e.g. requests
-      going against project goals, or bugs & feature requests that are so niche
-      or far-fetched that there’s zero chance of ever seeing them addressed.
-      But if in doubt, remain at point 1. above: leave open, renamed, labelled.
+    1. When in doubt, leave issues open and triaged as `bug` / `feature-request`.
+       It’s okay, reaching 0 open issues is _not_ an objective. Or if it is,
+       it deserves to be a development objective, not a triage one.
+    2. That being said, do close what’s `upstream`, with a kind message.
+    3. Also do close bugs that have been `need-info` or `cannot-reproduce` for
+       too long (weeks / months), with a kind message explaining we’re okay to
+       re-open if the requested info / scenario is provided.
+    4. Finally, carefully close issues we do not want to address, e.g. requests
+       going against project goals, or bugs & feature requests that are so niche
+       or far-fetched that there’s zero chance of ever seeing them addressed.
+       But if in doubt, remain at point 1. above: leave open, renamed, labelled.
 
 6. **Close duplicates issues** and link to the original issue.
 
-   1. To be able to notice dups implies you must know the backlog (one more
-      reason to keep it tidy and palatable). Once in a blue moon, do a
-      "full pass" of the whole backlog from beginning to end, you’ll often
-      find lots of now-irrelevant bugs, and duplicates.
+    1. To be able to notice dups implies you must know the backlog (one more
+       reason to keep it tidy and palatable). Once in a blue moon, do a
+       "full pass" of the whole backlog from beginning to end, you’ll often
+       find lots of now-irrelevant bugs, and duplicates.
 
 7. **Use [GitHub saved replies](https://github.com/settings/replies)** to
    automate asking for info and being nice on closing as noanswer / stale-needinfo.
@@ -251,19 +251,18 @@ These are the guidelines we (try to) follow when triaging [issues](https://githu
    From personal experience, users do understand this signal, and such hidden
    comments do avoid an avalanche of extra "+1" comments.
 
-   1. There are shades of lame. A literal `"+1"` comment is frankly useless and
-      is worth hiding. But a comment like `"same for me on Windows"` at least
-      brings an extra bit of information, so can remain visible.
+    1. There are shades of lame. A literal `"+1"` comment is frankly useless and
+       is worth hiding. But a comment like `"same for me on Windows"` at least
+       brings an extra bit of information, so can remain visible.
 
-   2. In a perfect world, GitHub would let us add a note when hiding comments to
-      express _"Please use a 👍 reaction on the issue to vote for it instead of_
-      _posting a +1 comment"_. In a perfecter world, GitHub would use their AI
-      skillz to automatically detect such comments, discourage them and nudge
-      towards a 👍 reaction. We’re not there yet, so “hidden as off-topic” will do.
+    2. In a perfect world, GitHub would let us add a note when hiding comments to
+       express _"Please use a 👍 reaction on the issue to vote for it instead of_
+       _posting a +1 comment"_. In a perfecter world, GitHub would use their AI
+       skillz to automatically detect such comments, discourage them and nudge
+       towards a 👍 reaction. We’re not there yet, so “hidden as off-topic” will do.
 
 10. **Don’t let yourself be abused** by abrasive / entitled users. There are
     plenty of articles documenting open-source burnout and trolls-induced misery.
     Find an article that speaks to you, and point problematic users to it.
     I like [Brett Cannon - The social contract of open source](https://snarky.ca/the-social-contract-of-open-source/).
-    
 11. **The number one way to not be abused by users** is to not have users. The number two way is to not give a shit what they think because you don't owe them anything. People being nice might deserve attention, but most people aren't nice. They're illiterate assholes.

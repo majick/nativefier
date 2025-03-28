@@ -25,38 +25,39 @@ I built this because I grew tired of having to Alt-Tab to my browser and then se
 through numerous open tabs when using Messenger or
 Whatsapp Web ([HN thread](https://news.ycombinator.com/item?id=10930718)). Nativefier features:
 
-- Automatically retrieval of app icon / name
-- Injection of custom JS & CSS
-- Many more, see the [API docs](API.md) or `nativefier --help`
+-   Automatically retrieval of app icon / name
+-   Injection of custom JS & CSS
+-   Many more, see the [API docs](API.md) or `nativefier --help`
 
 ## Installation
 
 Install Nativefier with `npm install .` . Do not use the broken version that the original guy has submitted to whatever the npm package repo is. Use this code. Requirements:
 
-- macOS 10.13+ / Windows / Linux
-- [Node.js](https://nodejs.org/) ≥ 16.9 and npm ≥ 7.10
+-   macOS 10.13+ / Windows / Linux
+-   [Node.js](https://nodejs.org/) ≥ 16.9 and npm ≥ 7.10
 
 Optional dependencies:
 
-- [ImageMagick](http://www.imagemagick.org/) or [GraphicsMagick](http://www.graphicsmagick.org/) to convert icons.
-  Be sure `convert` + `identify` or `gm` are in your `$PATH`.
-- [Wine](https://www.winehq.org/) to build Windows apps from non-Windows platforms.
-  Be sure `wine` is in your `$PATH`.
+-   [ImageMagick](http://www.imagemagick.org/) or [GraphicsMagick](http://www.graphicsmagick.org/) to convert icons.
+    Be sure `convert` + `identify` or `gm` are in your `$PATH`.
+-   [Wine](https://www.winehq.org/) to build Windows apps from non-Windows platforms.
+    Be sure `wine` is in your `$PATH`.
 
 <details>
   <summary>~~Or install with Docker (click to expand)~~ Deprecated all to shit</summary>
 
-  Don't do this any more. You can build your own container, but dude uploaded his piece of crap version to the repo. I do not maintain your repos.
+Don't do this any more. You can build your own container, but dude uploaded his piece of crap version to the repo. I do not maintain your repos.
+
  </details>
 
 <details>
   <summary>~~Or install with Snap & AUR (click to expand)~~ Deprecated as fuck</summary>
 
-  ~These repos are *not* managed by Nativefier maintainers; use at your own risk.
-  If using them, for your security, please inspect the build script.~
+~These repos are _not_ managed by Nativefier maintainers; use at your own risk.
+If using them, for your security, please inspect the build script.~
 
-  - ~~[Snap](https://snapcraft.io/nativefier)~~ // I don't give a fuck about an Ubuntu
-  - ~~[AUR](https://aur.archlinux.org/packages/nodejs-nativefier)~~ // I don't give a fuck about an Arch
+-   ~~[Snap](https://snapcraft.io/nativefier)~~ // I don't give a fuck about an Ubuntu
+-   ~~[AUR](https://aur.archlinux.org/packages/nodejs-nativefier)~~ // I don't give a fuck about an Arch
 </details>
 
 ## Usage

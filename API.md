@@ -2,96 +2,96 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Packaging Squirrel-based installers](#packaging-squirrel-based-installers)
-- [Command Line](#command-line)
-  - [Target Url](#target-url)
-  - [[dest]](#dest)
-  - [Help](#help)
-  - [Version](#version)
-  - [App Creation Options](#app-creation-options)
-    - [[arch]](#arch)
-    - [[conceal]](#conceal)
-    - [[electron-version]](#electron-version)
-    - [[global-shortcuts]](#global-shortcuts)
-    - [[icon]](#icon)
-    - [[name]](#name)
-    - [[no-overwrite]](#no-overwrite)
-    - [[platform]](#platform)
-    - [[portable]](#portable)
-    - [[upgrade]](#upgrade)
-    - [[widevine]](#widevine)
-  - [App Window Options](#app-window-options)
-    - [[always-on-top]](#always-on-top)
-    - [[background-color]](#background-color)
-    - [[bookmarks-menu]](#bookmarks-menu)
-    - [[browserwindow-options]](#browserwindow-options)
-    - [[disable-context-menu]](#disable-context-menu)
-    - [[disable-dev-tools]](#disable-dev-tools)
-    - [[full-screen]](#full-screen)
-    - [[height]](#height)
-    - [[hide-window-frame]](#hide-window-frame)
-    - [[max-height]](#max-height)
-    - [[max-width]](#max-width)
-    - [[maximize]](#maximize)
-    - [[min-height]](#min-height)
-    - [[min-width]](#min-width)
-    - [[process-envs]](#process-envs)
-    - [[show-menu-bar]](#show-menu-bar)
-    - [[single-instance]](#single-instance)
-    - [[title-bar-style]](#title-bar-style)
-    - [[tray]](#tray)
-    - [[width]](#width)
-    - [[x]](#x)
-    - [[y]](#y)
-    - [[zoom]](#zoom)
-  - [Internal Browser Options](#internal-browser-options)
-    - [[file-download-options]](#file-download-options)
-    - [[inject]](#inject)
-    - [[lang]](#lang)
-    - [[user-agent]](#user-agent)
-    - [[user-agent-honest]](#user-agent-honest)
-  - [Internal Browser Cache Options](#internal-browser-cache-options)
-    - [[clear-cache]](#clear-cache)
-    - [[disk-cache-size]](#disk-cache-size)
-  - [URL Handling Options](#url-handling-options)
-    - [[block-external-urls]](#block-external-urls)
-    - [[internal-urls]](#internal-urls)
-      - [[internal-login-pages]](#internal-login-pages)
-    - [[strict-internal-urls]](#strict-internal-urls)
-    - [[proxy-rules]](#proxy-rules)
-  - [Auth Options](#auth-options)
-    - [[basic-auth-username] and [basic-auth-password]](#basic-auth-username-and-basic-auth-password)
-  - [Graphics Options](#graphics-options)
-    - [[disable-gpu]](#disable-gpu)
-    - [[enable-es3-apis]](#enable-es3-apis)
-    - [[ignore-gpu-blacklist]](#ignore-gpu-blacklist)
-  - [(In)Security Options](#insecurity-options)
-    - [[disable-old-build-warning-yesiknowitisinsecure]](#disable-old-build-warning-yesiknowitisinsecure)
-    - [[ignore-certificate]](#ignore-certificate)
-    - [[insecure]](#insecure)
-  - [Platform Specific Options](#platform-specific-options)
-    - [[app-copyright]](#app-copyright)
-    - [[app-version]](#app-version)
-    - [[bounce]](#bounce)
-    - [[build-version]](#build-version)
-    - [[counter]](#counter)
-    - [[darwin-dark-mode-support]](#darwin-dark-mode-support)
-    - [[fast-quit]](#fast-quit)
-    - [[win32metadata]](#win32metadata)
-  - [Debug Options](#debug-options)
-    - [[crash-reporter]](#crash-reporter)
-    - [[verbose]](#verbose)
-    - [[quiet]](#quiet)
-  - [Flash Options (Deprecated)](#flash-options-deprecated)
-    - [[flash] and [flash-path] (DEPRECATED)](#flash-and-flash-path-deprecated)
-- [Programmatic API](#programmatic-api)
-- [Accessing The Electron Session](#accessing-the-electron-session)
-  - [Important Note On funcArgs](#important-note-on-funcargs)
-  - [session-interaction-reply](#session-interaction-reply)
-  - [Errors](#errors)
-  - [Complex Return Values](#complex-return-values)
-  - [Example](#example)
+-   [Table of Contents](#table-of-contents)
+-   [Packaging Squirrel-based installers](#packaging-squirrel-based-installers)
+-   [Command Line](#command-line)
+    -   [Target Url](#target-url)
+    -   [[dest]](#dest)
+    -   [Help](#help)
+    -   [Version](#version)
+    -   [App Creation Options](#app-creation-options)
+        -   [[arch]](#arch)
+        -   [[conceal]](#conceal)
+        -   [[electron-version]](#electron-version)
+        -   [[global-shortcuts]](#global-shortcuts)
+        -   [[icon]](#icon)
+        -   [[name]](#name)
+        -   [[no-overwrite]](#no-overwrite)
+        -   [[platform]](#platform)
+        -   [[portable]](#portable)
+        -   [[upgrade]](#upgrade)
+        -   [[widevine]](#widevine)
+    -   [App Window Options](#app-window-options)
+        -   [[always-on-top]](#always-on-top)
+        -   [[background-color]](#background-color)
+        -   [[bookmarks-menu]](#bookmarks-menu)
+        -   [[browserwindow-options]](#browserwindow-options)
+        -   [[disable-context-menu]](#disable-context-menu)
+        -   [[disable-dev-tools]](#disable-dev-tools)
+        -   [[full-screen]](#full-screen)
+        -   [[height]](#height)
+        -   [[hide-window-frame]](#hide-window-frame)
+        -   [[max-height]](#max-height)
+        -   [[max-width]](#max-width)
+        -   [[maximize]](#maximize)
+        -   [[min-height]](#min-height)
+        -   [[min-width]](#min-width)
+        -   [[process-envs]](#process-envs)
+        -   [[show-menu-bar]](#show-menu-bar)
+        -   [[single-instance]](#single-instance)
+        -   [[title-bar-style]](#title-bar-style)
+        -   [[tray]](#tray)
+        -   [[width]](#width)
+        -   [[x]](#x)
+        -   [[y]](#y)
+        -   [[zoom]](#zoom)
+    -   [Internal Browser Options](#internal-browser-options)
+        -   [[file-download-options]](#file-download-options)
+        -   [[inject]](#inject)
+        -   [[lang]](#lang)
+        -   [[user-agent]](#user-agent)
+        -   [[user-agent-honest]](#user-agent-honest)
+    -   [Internal Browser Cache Options](#internal-browser-cache-options)
+        -   [[clear-cache]](#clear-cache)
+        -   [[disk-cache-size]](#disk-cache-size)
+    -   [URL Handling Options](#url-handling-options)
+        -   [[block-external-urls]](#block-external-urls)
+        -   [[internal-urls]](#internal-urls)
+            -   [[internal-login-pages]](#internal-login-pages)
+        -   [[strict-internal-urls]](#strict-internal-urls)
+        -   [[proxy-rules]](#proxy-rules)
+    -   [Auth Options](#auth-options)
+        -   [[basic-auth-username] and [basic-auth-password]](#basic-auth-username-and-basic-auth-password)
+    -   [Graphics Options](#graphics-options)
+        -   [[disable-gpu]](#disable-gpu)
+        -   [[enable-es3-apis]](#enable-es3-apis)
+        -   [[ignore-gpu-blacklist]](#ignore-gpu-blacklist)
+    -   [(In)Security Options](#insecurity-options)
+        -   [[disable-old-build-warning-yesiknowitisinsecure]](#disable-old-build-warning-yesiknowitisinsecure)
+        -   [[ignore-certificate]](#ignore-certificate)
+        -   [[insecure]](#insecure)
+    -   [Platform Specific Options](#platform-specific-options)
+        -   [[app-copyright]](#app-copyright)
+        -   [[app-version]](#app-version)
+        -   [[bounce]](#bounce)
+        -   [[build-version]](#build-version)
+        -   [[counter]](#counter)
+        -   [[darwin-dark-mode-support]](#darwin-dark-mode-support)
+        -   [[fast-quit]](#fast-quit)
+        -   [[win32metadata]](#win32metadata)
+    -   [Debug Options](#debug-options)
+        -   [[crash-reporter]](#crash-reporter)
+        -   [[verbose]](#verbose)
+        -   [[quiet]](#quiet)
+    -   [Flash Options (Deprecated)](#flash-options-deprecated)
+        -   [[flash] and [flash-path] (DEPRECATED)](#flash-and-flash-path-deprecated)
+-   [Programmatic API](#programmatic-api)
+-   [Accessing The Electron Session](#accessing-the-electron-session)
+    -   [Important Note On funcArgs](#important-note-on-funcargs)
+    -   [session-interaction-reply](#session-interaction-reply)
+    -   [Errors](#errors)
+    -   [Complex Return Values](#complex-return-values)
+    -   [Example](#example)
 
 ## Packaging Squirrel-based installers
 
@@ -105,8 +105,8 @@ nativefier [options] [targetUrl] [dest]
 
 You must provide:
 
-- Either a `targetUrl` to generate a new app from it.
-- Or option `--upgrade <pathOfAppToUpgrade>` to upgrade an existing app.
+-   Either a `targetUrl` to generate a new app from it.
+-   Or option `--upgrade <pathOfAppToUpgrade>` to upgrade an existing app.
 
 Command line options are listed below.
 
@@ -151,15 +151,15 @@ Prints the version of your `nativefier` install.
 
 The processor architecture to target when building.
 
-- Default: the architecture of the installed version of node (usually the architecture of the build-time machine).
-  - To test your default architecture you can run
-    ```
-    node -p "process.arch"
-    ```
-    (See https://nodejs.org/api/os.html#os_os_arch)
-  - Please note: On M1 Macs, unless an arm64 version of brew is used to install nodejs, the version installed will be an `x64` version run through Rosetta, and will result in an `x64` app being generated. If this is not desired, either specify `-a arm64` to build for M1, or re-install node with an arm64 version of brew. See https://github.com/nativefier/nativefier/issues/1089
-- Can be overridden by specifying one of: `x64`, `armv7l`, `arm64`, or `universal`
-- When specifying `universal` you must be building for the `darwin`, `mas`, `mac`, or `osx` platforms. This will generate a universal (M1 and x86) app.
+-   Default: the architecture of the installed version of node (usually the architecture of the build-time machine).
+    -   To test your default architecture you can run
+        ```
+        node -p "process.arch"
+        ```
+        (See https://nodejs.org/api/os.html#os_os_arch)
+    -   Please note: On M1 Macs, unless an arm64 version of brew is used to install nodejs, the version installed will be an `x64` version run through Rosetta, and will result in an `x64` app being generated. If this is not desired, either specify `-a arm64` to build for M1, or re-install node with an arm64 version of brew. See https://github.com/nativefier/nativefier/issues/1089
+-   Can be overridden by specifying one of: `x64`, `armv7l`, `arm64`, or `universal`
+-   When specifying `universal` you must be building for the `darwin`, `mas`, `mac`, or `osx` platforms. This will generate a universal (M1 and x86) app.
 
 Note: careful to not conflate _platform_ with _architecture_. If you want for example a Linux or Mac build, it's `--platform` you are looking for. See its documentation for details.
 
@@ -187,10 +187,10 @@ Electron version without the `v`, see https://github.com/atom/electron/releases.
 
 Notes:
 
-- When packaging for Windows, must be a path to a `.ico` file.
-- When packaging for Linux, must be a path to a `.png` file.
-- When packaging for macOS, must be a `.icns` or a `.png` file if the [optional dependencies](../README.md#optional-dependencies) are installed.
-  If your `PATH` has our image-conversion dependencies (`iconutil`, and either ImageMagick `convert` + `identify`, or GraphicsMagick `gm`), Nativefier will automatically convert the `.png` to a `.icns` for you.
+-   When packaging for Windows, must be a path to a `.ico` file.
+-   When packaging for Linux, must be a path to a `.png` file.
+-   When packaging for macOS, must be a `.icns` or a `.png` file if the [optional dependencies](../README.md#optional-dependencies) are installed.
+    If your `PATH` has our image-conversion dependencies (`iconutil`, and either ImageMagick `convert` + `identify`, or GraphicsMagick `gm`), Nativefier will automatically convert the `.png` to a `.icns` for you.
 
 Alternative to macOS users: [iConvertIcons](https://iconverticons.com/online/) can be used to convert `.pngs`, though it can be quite cumbersome.
 
@@ -220,13 +220,13 @@ Specifies if the destination directory should be not overwritten, defaults to fa
 -p, --platform <value>
 ```
 
-- Default: current operating system.
-  - To test your default platform you can run
-    ```
-    node -p "process.platform"
-    ```
-    (See https://nodejs.org/api/os.html#os_os_platform)
-- Can be overwritten by specifying either `linux`, `windows`, `osx` or `mas` for a Mac App Store specific build.
+-   Default: current operating system.
+    -   To test your default platform you can run
+        ```
+        node -p "process.platform"
+        ```
+        (See https://nodejs.org/api/os.html#os_os_platform)
+-   Can be overwritten by specifying either `linux`, `windows`, `osx` or `mas` for a Mac App Store specific build.
 
 Note: careful to not conflate _platform_ with _architecture_. If you want for example a 32bit build or an ARM build, it's `--arch` you are looking for. See its documentation for details.
 
@@ -319,29 +319,29 @@ Example of such a JSON file:
 
 ```json
 {
-  "menuLabel": "&Music",
-  "bookmarks": [
-    {
-      "title": "lofi.cafe",
-      "url": "https://lofi.cafe/",
-      "type": "link",
-      "shortcut": "CmdOrCtrl+1"
-    },
-    {
-      "title": "beats to relax/study to",
-      "url": "https://www.youtube.com/watch?v=5qap5aO4i9A",
-      "type": "link",
-      "shortcut": "CmdOrCtrl+2"
-    },
-    {
-      "type": "separator"
-    },
-    {
-      "title": "RÜFÜS DU SOL Live from Joshua Tree",
-      "type": "link",
-      "url": "https://www.youtube.com/watch?v=Zy4KtD98S2c"
-    }
-  ]
+    "menuLabel": "&Music",
+    "bookmarks": [
+        {
+            "title": "lofi.cafe",
+            "url": "https://lofi.cafe/",
+            "type": "link",
+            "shortcut": "CmdOrCtrl+1"
+        },
+        {
+            "title": "beats to relax/study to",
+            "url": "https://www.youtube.com/watch?v=5qap5aO4i9A",
+            "type": "link",
+            "shortcut": "CmdOrCtrl+2"
+        },
+        {
+            "type": "separator"
+        },
+        {
+            "title": "RÜFÜS DU SOL Live from Joshua Tree",
+            "type": "link",
+            "url": "https://www.youtube.com/watch?v=Zy4KtD98S2c"
+        }
+    ]
 }
 ```
 
@@ -485,18 +485,18 @@ Consider injecting a custom CSS (via `--inject`) for better integration. Specifi
 
 /* header is draggable... */
 header {
-  -webkit-app-region: drag;
+    -webkit-app-region: drag;
 }
 
 /* but any buttons inside the header shouldn't be draggable */
 header button {
-  -webkit-app-region: no-drag;
+    -webkit-app-region: no-drag;
 }
 
 /* perhaps move some items out of way for the traffic light */
 header div:first-child {
-  margin-left: 100px;
-  margin-top: 25px;
+    margin-left: 100px;
+    margin-top: 25px;
 }
 ```
 
@@ -576,26 +576,26 @@ You may define multiple global shortcuts which can trigger a series of input eve
 
 ```js
 [
-  {
-    // Key is passed as first argument to globalShortcut.register
-    key: 'CommandOrControl+Shift+Z',
-    // The input events exactly match the event config in Electron for contents.sendInputEvent(event)
-    inputEvents: [
-      {
-        // Available event types: mouseDown, mouseUp, mouseEnter, mouseLeave, contextMenu, mouseWheel, mouseMove, keyDown, keyUp or char
-        type: 'keyDown',
-        // Further config depends on your event type. See docs at: https://github.com/electron/electron/blob/master/docs/api/web-contents.md#contentssendinputeventevent
-        keyCode: 'Space',
-      },
-    ],
-  },
+    {
+        // Key is passed as first argument to globalShortcut.register
+        key: 'CommandOrControl+Shift+Z',
+        // The input events exactly match the event config in Electron for contents.sendInputEvent(event)
+        inputEvents: [
+            {
+                // Available event types: mouseDown, mouseUp, mouseEnter, mouseLeave, contextMenu, mouseWheel, mouseMove, keyDown, keyUp or char
+                type: 'keyDown',
+                // Further config depends on your event type. See docs at: https://github.com/electron/electron/blob/master/docs/api/web-contents.md#contentssendinputeventevent
+                keyCode: 'Space',
+            },
+        ],
+    },
 ];
 ```
 
 _Note regarding modifier keys:_ If you want to trigger key events which include a modifier (Ctrl, Shift,...), you need to keyDown the modifier key first, then keyDown the actual key _including_ the modifier key as modifier property and then keyUp both keys again. No idea what this means? See the example for `MediaPreviousTrack` below! For more details, please see the Electron documentation:
 
-- List of available keys: https://github.com/electron/electron/blob/master/docs/api/accelerator.md
-- Details about how to create input event objects: https://github.com/electron/electron/blob/master/docs/api/web-contents.md#contentssendinputeventevent
+-   List of available keys: https://github.com/electron/electron/blob/master/docs/api/accelerator.md
+-   Details about how to create input event objects: https://github.com/electron/electron/blob/master/docs/api/web-contents.md#contentssendinputeventevent
 
 _Note about Global Shortcuts on macOS_
 
@@ -605,61 +605,61 @@ Example `shortcuts.json` for `https://deezer.com` & `https://soundcloud.com` to 
 
 ```json
 [
-  {
-    "key": "MediaPlayPause",
-    "inputEvents": [
-      {
-        "type": "keyDown",
-        "keyCode": "Space"
-      }
-    ]
-  },
-  {
-    "key": "MediaPreviousTrack",
-    "inputEvents": [
-      {
-        "type": "keyDown",
-        "keyCode": "Shift"
-      },
-      {
-        "type": "keyDown",
-        "keyCode": "Left",
-        "modifiers": ["shift"]
-      },
-      {
-        "type": "keyUp",
-        "keyCode": "Left",
-        "modifiers": ["shift"]
-      },
-      {
-        "type": "keyUp",
-        "keyCode": "Shift"
-      }
-    ]
-  },
-  {
-    "key": "MediaNextTrack",
-    "inputEvents": [
-      {
-        "type": "keyDown",
-        "keyCode": "Shift"
-      },
-      {
-        "type": "keyDown",
-        "keyCode": "Right",
-        "modifiers": ["shift"]
-      },
-      {
-        "type": "keyUp",
-        "keyCode": "Right",
-        "modifiers": ["shift"]
-      },
-      {
-        "type": "keyUp",
-        "keyCode": "Shift"
-      }
-    ]
-  }
+    {
+        "key": "MediaPlayPause",
+        "inputEvents": [
+            {
+                "type": "keyDown",
+                "keyCode": "Space"
+            }
+        ]
+    },
+    {
+        "key": "MediaPreviousTrack",
+        "inputEvents": [
+            {
+                "type": "keyDown",
+                "keyCode": "Shift"
+            },
+            {
+                "type": "keyDown",
+                "keyCode": "Left",
+                "modifiers": ["shift"]
+            },
+            {
+                "type": "keyUp",
+                "keyCode": "Left",
+                "modifiers": ["shift"]
+            },
+            {
+                "type": "keyUp",
+                "keyCode": "Shift"
+            }
+        ]
+    },
+    {
+        "key": "MediaNextTrack",
+        "inputEvents": [
+            {
+                "type": "keyDown",
+                "keyCode": "Shift"
+            },
+            {
+                "type": "keyDown",
+                "keyCode": "Right",
+                "modifiers": ["shift"]
+            },
+            {
+                "type": "keyUp",
+                "keyCode": "Right",
+                "modifiers": ["shift"]
+            },
+            {
+                "type": "keyUp",
+                "keyCode": "Shift"
+            }
+        ]
+    }
 ]
 ```
 
@@ -699,9 +699,9 @@ Set the user agent to run the created app with. Use `--user-agent-honest` to use
 
 _[New in 44.0.0]_ The following short codes are also supported to generate a user agent: `edge`, `firefox`, `safari`.
 
-- `edge` will generate a Microsoft Edge user agent matching the Chrome version of Electron being used
-- `firefox` will generate a Mozilla Firefox user agent matching the latest stable release of that browser
-- `safari` will generate an Apple Safari user agent matching the latest stable release of that browser
+-   `edge` will generate a Microsoft Edge user agent matching the Chrome version of Electron being used
+-   `firefox` will generate a Mozilla Firefox user agent matching the latest stable release of that browser
+-   `safari` will generate an Apple Safari user agent matching the latest stable release of that browser
 
 #### [user-agent-honest]
 
@@ -761,8 +761,8 @@ Internal URLs will open in Nativefier, other URLs will open in your preferred br
 Defaults to view as "internal" two URLs that share the same base domain,
 once stripped of `www.`. For example, by default,
 
-- URLs from/to `foo.com`, `app.foo.com`, `www.foo.com` are considered internal.
-- URLs from/to `abc.com` and `xyz.com` are considered external.
+-   URLs from/to `foo.com`, `app.foo.com`, `www.foo.com` are considered internal.
+-   URLs from/to `abc.com` and `xyz.com` are considered external.
 
 Example of `--internal-urls` causing all links to Google to be considered internal:
 
@@ -770,7 +770,7 @@ Example of `--internal-urls` causing all links to Google to be considered intern
 nativefier https://google.com --internal-urls ".*?\.google\.*?"
 ```
 
-To turn off base domain matching, use [`--strict-internal-urls`](#strict-internal-urls).  Or, if you never expect Nativefier to open an "external" page in your OS browser,
+To turn off base domain matching, use [`--strict-internal-urls`](#strict-internal-urls). Or, if you never expect Nativefier to open an "external" page in your OS browser,
 
 ```bash
 nativefier https://google.com --internal-urls ".*?"
@@ -786,18 +786,18 @@ change it but it might be unnecessary.
 
 Current known internal login pages:
 
-- `amazon.com/signin`
-- `appleid.apple.com/auth/authorize`
-- `id.atlassian.com` , `auth.atlassian.com`
-- `facebook.com/login`
-- `github.com/login` , `github.com/session`
-- `accounts.google.com` , `mail.google.com/accounts/SetOSID`
-- `linkedin.com/uas/login`
-- `login.live.com` , `login.microsoftonline.com`
-- `okta.com`
-- `twitter.com/oauth/authenticate`
-- `workspaceair.com`
-- `securid.com`
+-   `amazon.com/signin`
+-   `appleid.apple.com/auth/authorize`
+-   `id.atlassian.com` , `auth.atlassian.com`
+-   `facebook.com/login`
+-   `github.com/login` , `github.com/session`
+-   `accounts.google.com` , `mail.google.com/accounts/SetOSID`
+-   `linkedin.com/uas/login`
+-   `login.live.com` , `login.microsoftonline.com`
+-   `okta.com`
+-   `twitter.com/oauth/authenticate`
+-   `workspaceair.com`
+-   `securid.com`
 
 Note: While .com is specified, for most of these we try to match even on non-US
 based domains such as `.co.uk` as well
@@ -810,8 +810,7 @@ If you think this list is missing a login page that you think should be internal
 --strict-internal-urls
 ```
 
-Disables base domain matching when determining if a link is internal.  Only the `--internal-urls` regex and login pages will be matched against, so `app.foo.com` will be external to `www.foo.com` unless it matches the `--internal-urls` regex.
-
+Disables base domain matching when determining if a link is internal. Only the `--internal-urls` regex and login pages will be matched against, so `app.foo.com` will be external to `www.foo.com` unless it matches the `--internal-urls` regex.
 
 #### [proxy-rules]
 
@@ -1051,46 +1050,46 @@ var nativefier = require('nativefier').default;
 
 // possible options, defaults unless specified otherwise
 var options = {
-  name: 'Web WhatsApp', // will be inferred if not specified
-  targetUrl: 'http://web.whatsapp.com', // required
-  platform: 'darwin', // defaults to the current system
-  arch: 'x64', // defaults to the current system
-  version: '0.36.4',
-  out: '.',
-  overwrite: false,
-  asar: false, // see conceal
-  icon: '~/Desktop/icon.png',
-  counter: false,
-  bounce: false,
-  width: 1280,
-  height: 800,
-  showMenuBar: false,
-  fastQuit: false,
-  userAgent: 'Mozilla ...', // will infer a default for your current system
-  ignoreCertificate: false,
-  ignoreGpuBlacklist: false,
-  enableEs3Apis: false,
-  internalUrls: '.*?',
-  blockExternalUrls: false,
-  insecure: false,
-  honest: false,
-  zoom: 1.0,
-  singleInstance: false,
-  clearCache: false,
-  fileDownloadOptions: {
-    saveAs: true, // always show "Save As" dialog
-  },
-  processEnvs: {
-    GOOGLE_API_KEY: '<your-google-api-key>',
-  },
+    name: 'Web WhatsApp', // will be inferred if not specified
+    targetUrl: 'http://web.whatsapp.com', // required
+    platform: 'darwin', // defaults to the current system
+    arch: 'x64', // defaults to the current system
+    version: '0.36.4',
+    out: '.',
+    overwrite: false,
+    asar: false, // see conceal
+    icon: '~/Desktop/icon.png',
+    counter: false,
+    bounce: false,
+    width: 1280,
+    height: 800,
+    showMenuBar: false,
+    fastQuit: false,
+    userAgent: 'Mozilla ...', // will infer a default for your current system
+    ignoreCertificate: false,
+    ignoreGpuBlacklist: false,
+    enableEs3Apis: false,
+    internalUrls: '.*?',
+    blockExternalUrls: false,
+    insecure: false,
+    honest: false,
+    zoom: 1.0,
+    singleInstance: false,
+    clearCache: false,
+    fileDownloadOptions: {
+        saveAs: true, // always show "Save As" dialog
+    },
+    processEnvs: {
+        GOOGLE_API_KEY: '<your-google-api-key>',
+    },
 };
 
 nativefier(options, function (error, appPath) {
-  if (error) {
-    console.error(error);
-    return;
-  }
-  console.log('App has been nativefied to', appPath);
+    if (error) {
+        console.error(error);
+        return;
+    }
+    console.log('App has been nativefied to', appPath);
 });
 ```
 
@@ -1106,7 +1105,7 @@ To get a `session` property:
 const electron = require('electron');
 
 const request = {
-  property: 'availableSpellCheckerLanguages',
+    property: 'availableSpellCheckerLanguages',
 };
 electron.ipcRenderer.send('session-interaction', request);
 ```
@@ -1117,8 +1116,8 @@ To set a `session` property:
 const electron = require('electron');
 
 const request = {
-  property: 'spellCheckerEnabled',
-  propertyValue: true,
+    property: 'spellCheckerEnabled',
+    propertyValue: true,
 };
 electron.ipcRenderer.send('session-interaction', request);
 ```
@@ -1129,7 +1128,7 @@ To call a `session` function:
 const electron = require('electron');
 
 const request = {
-  func: 'clearCache',
+    func: 'clearCache',
 };
 electron.ipcRenderer.send('session-interaction', request);
 ```
@@ -1140,8 +1139,8 @@ To call a `session` function, with arguments:
 const electron = require('electron');
 
 const request = {
-  func: 'setDownloadPath',
-  funcArgs: [`/home/user/downloads`],
+    func: 'setDownloadPath',
+    funcArgs: [`/home/user/downloads`],
 };
 electron.ipcRenderer.send('session-interaction', request);
 ```
@@ -1160,12 +1159,12 @@ The results of the call, if desired, can be accessed one of two ways. Either you
 const electron = require('electron');
 
 const request = {
-  property: 'availableSpellCheckerLanguages',
+    property: 'availableSpellCheckerLanguages',
 };
 electron.ipcRenderer.send('session-interaction', request);
 
 electron.ipcRenderer.on('session-interaction-reply', (event, result) => {
-  console.log('session-interaction-reply', event, result.value);
+    console.log('session-interaction-reply', event, result.value);
 });
 ```
 
@@ -1177,10 +1176,10 @@ Or the result can be retrieved synchronously, though this is not recommended as 
 const electron = require('electron');
 
 const request = {
-  property: 'availableSpellCheckerLanguages',
+    property: 'availableSpellCheckerLanguages',
 };
 console.log(
-  electron.ipcRenderer.sendSync('session-interaction', request).value,
+    electron.ipcRenderer.sendSync('session-interaction', request).value,
 );
 ```
 
@@ -1192,13 +1191,13 @@ If desired, an id for the request may be provided to distinguish between event r
 const electron = require('electron');
 
 const request = {
-  id: 'availableSpellCheckerLanguages',
-  property: 'availableSpellCheckerLanguages',
+    id: 'availableSpellCheckerLanguages',
+    property: 'availableSpellCheckerLanguages',
 };
 electron.ipcRenderer.send('session-interaction', request);
 
 electron.ipcRenderer.on('session-interaction-reply', (event, result) => {
-  console.log('session-interaction-reply', event, result.id, result.value);
+    console.log('session-interaction-reply', event, result.id, result.value);
 });
 ```
 
@@ -1210,11 +1209,11 @@ If an error occurs while handling the interaction, it will be returned in the `s
 const electron = require('electron');
 
 electron.ipcRenderer.on('session-interaction-reply', (event, result) => {
-  console.log('session-interaction-reply', event, result.error);
+    console.log('session-interaction-reply', event, result.error);
 });
 
 electron.ipcRenderer.send('session-interaction', {
-  func: 'thisFunctionDoesNotExist',
+    func: 'thisFunctionDoesNotExist',
 });
 ```
 
@@ -1228,13 +1227,13 @@ For example, the following code will return an error instead of the expected val
 const electron = require('electron');
 
 const request = {
-  id: 'cookies',
-  property: 'cookies',
+    id: 'cookies',
+    property: 'cookies',
 };
 electron.ipcRenderer.send('session-interaction', request);
 
 electron.ipcRenderer.on('session-interaction-reply', (event, result) => {
-  console.log('session-interaction-reply', event, result);
+    console.log('session-interaction-reply', event, result);
 });
 ```
 
@@ -1246,58 +1245,58 @@ This javascript, when injected as a file via `--inject`, will attempt to call th
 const electron = require('electron');
 
 electron.ipcRenderer.on('session-interaction-reply', (event, result) => {
-  console.log('session-interaction-reply', event, result);
-  switch (result.id) {
-    case 'isSpellCheckerEnabled':
-      console.log('SpellChecker enabled?', result.value);
-      if (result.value === true) {
-        console.log('Getting supported languages...');
-        electron.ipcRenderer.send('session-interaction', {
-          id: 'availableSpellCheckerLanguages',
-          property: 'availableSpellCheckerLanguages',
-        });
-      } else {
-        console.log('SpellChecker disabled. Enabling...');
-        electron.ipcRenderer.send('session-interaction', {
-          id: 'setSpellCheckerEnabled',
-          property: 'spellCheckerEnabled',
-          propertyValue: true,
-        });
-      }
-      break;
-    case 'setSpellCheckerEnabled':
-      console.log(
-        'SpellChecker has now been enabled. Getting supported languages...',
-      );
-      electron.ipcRenderer.send('session-interaction', {
-        id: 'availableSpellCheckerLanguages',
-        property: 'availableSpellCheckerLanguages',
-      });
-      break;
-    case 'availableSpellCheckerLanguages':
-      console.log('Avaliable spellChecker languages:', result.value);
-      if (result.value.indexOf('fr') > -1) {
-        electron.ipcRenderer.send('session-interaction', {
-          id: 'setSpellCheckerLanguages',
-          func: 'setSpellCheckerLanguages',
-          funcArgs: [['fr']],
-        });
-      } else {
-        console.log(
-          "Not changing spellChecker language. 'fr' is not supported.",
-        );
-      }
-      break;
-    case 'setSpellCheckerLanguages':
-      console.log('SpellChecker language was set.');
-      break;
-    default:
-      console.error('Unknown reply id:', result.id);
-  }
+    console.log('session-interaction-reply', event, result);
+    switch (result.id) {
+        case 'isSpellCheckerEnabled':
+            console.log('SpellChecker enabled?', result.value);
+            if (result.value === true) {
+                console.log('Getting supported languages...');
+                electron.ipcRenderer.send('session-interaction', {
+                    id: 'availableSpellCheckerLanguages',
+                    property: 'availableSpellCheckerLanguages',
+                });
+            } else {
+                console.log('SpellChecker disabled. Enabling...');
+                electron.ipcRenderer.send('session-interaction', {
+                    id: 'setSpellCheckerEnabled',
+                    property: 'spellCheckerEnabled',
+                    propertyValue: true,
+                });
+            }
+            break;
+        case 'setSpellCheckerEnabled':
+            console.log(
+                'SpellChecker has now been enabled. Getting supported languages...',
+            );
+            electron.ipcRenderer.send('session-interaction', {
+                id: 'availableSpellCheckerLanguages',
+                property: 'availableSpellCheckerLanguages',
+            });
+            break;
+        case 'availableSpellCheckerLanguages':
+            console.log('Avaliable spellChecker languages:', result.value);
+            if (result.value.indexOf('fr') > -1) {
+                electron.ipcRenderer.send('session-interaction', {
+                    id: 'setSpellCheckerLanguages',
+                    func: 'setSpellCheckerLanguages',
+                    funcArgs: [['fr']],
+                });
+            } else {
+                console.log(
+                    "Not changing spellChecker language. 'fr' is not supported.",
+                );
+            }
+            break;
+        case 'setSpellCheckerLanguages':
+            console.log('SpellChecker language was set.');
+            break;
+        default:
+            console.error('Unknown reply id:', result.id);
+    }
 });
 
 electron.ipcRenderer.send('session-interaction', {
-  id: 'isSpellCheckerEnabled',
-  func: 'isSpellCheckerEnabled',
+    id: 'isSpellCheckerEnabled',
+    func: 'isSpellCheckerEnabled',
 });
 ```
