@@ -17,13 +17,13 @@ export const DEFAULT_FIREFOX_VERSION = '116.0.3';
 
 // https://en.wikipedia.org/wiki/Safari_version_history
 export const DEFAULT_SAFARI_VERSION = {
-  majorVersion: 16,
-  version: '16.6',
-  webkitVersion: '605.1.15',
+    majorVersion: 16,
+    version: '16.6',
+    webkitVersion: '605.1.15',
 };
 
 export const ELECTRON_MAJOR_VERSION = parseInt(
-  DEFAULT_ELECTRON_VERSION.split('.')[0],
-  10,
+    DEFAULT_ELECTRON_VERSION.split('.')[0],
+    10,
 );
 export const PLACEHOLDER_APP_DIR = path.join(__dirname, './../', 'app');

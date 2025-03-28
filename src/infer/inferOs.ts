@@ -6,30 +6,30 @@ import * as log from 'loglevel';
 // possible to convert a literal type to an array of strings in current TypeScript
 export const supportedArchs = ['x64', 'armv7l', 'arm64', 'universal'];
 export const supportedPlatforms = [
-  'darwin',
-  'linux',
-  'mac',
-  'mas',
-  'osx',
-  'win32',
-  'windows',
+    'darwin',
+    'linux',
+    'mac',
+    'mas',
+    'osx',
+    'win32',
+    'windows',
 ];
 
 export function inferPlatform(): string {
-  const platform = os.platform();
-  if (['darwin', 'linux', 'win32'].includes(platform)) {
-    log.debug('Inferred platform', platform);
-    return platform;
-  }
+    const platform = os.platform();
+    if (['darwin', 'linux', 'win32'].includes(platform)) {
+        log.debug('Inferred platform', platform);
+        return platform;
+    }
 
-  throw new Error(`Untested platform ${platform} detected`);
+    throw new Error(`Untested platform ${platform} detected`);
 }
 
 export function inferArch(): string {
-  const arch = os.arch();
-  if (!supportedArchs.includes(arch)) {
-    throw new Error(`Incompatible architecture ${arch} detected`);
-  }
-  log.debug('Inferred arch', arch);
-  return arch;
+    const arch = os.arch();
+    if (!supportedArchs.includes(arch)) {
+        throw new Error(`Incompatible architecture ${arch} detected`);
+    }
+    log.debug('Inferred arch', arch);
+    return arch;
 }
