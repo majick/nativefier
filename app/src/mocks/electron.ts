@@ -20,141 +20,141 @@ import { EventEmitter } from 'events';
 */
 
 class MockBrowserWindow extends EventEmitter {
-  webContents: MockWebContents;
+    webContents: MockWebContents;
 
-  constructor(options?: unknown) {
-    // @ts-expect-error options is really EventEmitterOptions, but events.d.ts doesn't expose it...
-    super(options);
-    this.webContents = new MockWebContents();
-  }
+    constructor(options?: unknown) {
+        // @ts-expect-error options is really EventEmitterOptions, but events.d.ts doesn't expose it...
+        super(options);
+        this.webContents = new MockWebContents();
+    }
 
-  addTabbedWindow(tab: MockBrowserWindow): void {
-    return;
-  }
+    addTabbedWindow(tab: MockBrowserWindow): void {
+        return;
+    }
 
-  focus(): void {
-    return;
-  }
+    focus(): void {
+        return;
+    }
 
-  static fromWebContents(webContents: MockWebContents): MockBrowserWindow {
-    return new MockBrowserWindow();
-  }
+    static fromWebContents(webContents: MockWebContents): MockBrowserWindow {
+        return new MockBrowserWindow();
+    }
 
-  static getFocusedWindow(window: MockBrowserWindow): MockBrowserWindow {
-    return window ?? new MockBrowserWindow();
-  }
+    static getFocusedWindow(window: MockBrowserWindow): MockBrowserWindow {
+        return window ?? new MockBrowserWindow();
+    }
 
-  isSimpleFullScreen(): boolean {
-    throw new Error('Not implemented');
-  }
+    isSimpleFullScreen(): boolean {
+        throw new Error('Not implemented');
+    }
 
-  isFullScreen(): boolean {
-    throw new Error('Not implemented');
-  }
+    isFullScreen(): boolean {
+        throw new Error('Not implemented');
+    }
 
-  isFullScreenable(): boolean {
-    throw new Error('Not implemented');
-  }
+    isFullScreenable(): boolean {
+        throw new Error('Not implemented');
+    }
 
-  loadURL(url: string, options?: unknown): Promise<void> {
-    return Promise.resolve(undefined);
-  }
+    loadURL(url: string, options?: unknown): Promise<void> {
+        return Promise.resolve(undefined);
+    }
 
-  setFullScreen(flag: boolean): void {
-    return;
-  }
+    setFullScreen(flag: boolean): void {
+        return;
+    }
 
-  setSimpleFullScreen(flag: boolean): void {
-    return;
-  }
+    setSimpleFullScreen(flag: boolean): void {
+        return;
+    }
 }
 
 class MockDialog {
-  static showMessageBox(
-    browserWindow: MockBrowserWindow,
-    options: unknown,
-  ): Promise<number> {
-    throw new Error('Not implemented');
-  }
+    static showMessageBox(
+        browserWindow: MockBrowserWindow,
+        options: unknown,
+    ): Promise<number> {
+        throw new Error('Not implemented');
+    }
 
-  static showMessageBoxSync(
-    browserWindow: MockBrowserWindow,
-    options: unknown,
-  ): number {
-    throw new Error('Not implemented');
-  }
+    static showMessageBoxSync(
+        browserWindow: MockBrowserWindow,
+        options: unknown,
+    ): number {
+        throw new Error('Not implemented');
+    }
 }
 
 class MockSession extends EventEmitter {
-  webRequest: MockWebRequest;
+    webRequest: MockWebRequest;
 
-  constructor() {
-    super();
-    this.webRequest = new MockWebRequest();
-  }
+    constructor() {
+        super();
+        this.webRequest = new MockWebRequest();
+    }
 
-  clearCache(): Promise<void> {
-    return Promise.resolve();
-  }
+    clearCache(): Promise<void> {
+        return Promise.resolve();
+    }
 
-  clearStorageData(): Promise<void> {
-    return Promise.resolve();
-  }
+    clearStorageData(): Promise<void> {
+        return Promise.resolve();
+    }
 }
 
 class MockWebContents extends EventEmitter {
-  session: MockSession;
+    session: MockSession;
 
-  constructor() {
-    super();
-    this.session = new MockSession();
-  }
+    constructor() {
+        super();
+        this.session = new MockSession();
+    }
 
-  getURL(): string {
-    throw new Error('Not implemented');
-  }
+    getURL(): string {
+        throw new Error('Not implemented');
+    }
 
-  insertCSS(css: string, options?: unknown): Promise<string> {
-    throw new Error('Not implemented');
-  }
+    insertCSS(css: string, options?: unknown): Promise<string> {
+        throw new Error('Not implemented');
+    }
 }
 
 class MockWebRequest {
-  emitter: InternalEmitter;
+    emitter: InternalEmitter;
 
-  constructor() {
-    this.emitter = new InternalEmitter();
-  }
-
-  onResponseStarted(
-    filter: unknown,
-    listener: ((details: unknown) => void) | null,
-  ): void {
-    if (listener) {
-      this.emitter.addListener('onResponseStarted', (details: unknown) =>
-        listener(details),
-      );
+    constructor() {
+        this.emitter = new InternalEmitter();
     }
-  }
 
-  send(event: string, ...args: unknown[]): void {
-    this.emitter.emit(event, ...args);
-  }
+    onResponseStarted(
+        filter: unknown,
+        listener: ((details: unknown) => void) | null,
+    ): void {
+        if (listener) {
+            this.emitter.addListener('onResponseStarted', (details: unknown) =>
+                listener(details),
+            );
+        }
+    }
+
+    send(event: string, ...args: unknown[]): void {
+        this.emitter.emit(event, ...args);
+    }
 }
 
 class InternalEmitter extends EventEmitter {}
 
 const mockShell = {
-  openExternal(url: string, options?: unknown): Promise<void> {
-    return new Promise((resolve) => resolve());
-  },
+    openExternal(url: string, options?: unknown): Promise<void> {
+        return new Promise((resolve) => resolve());
+    },
 };
 
 export {
-  MockDialog as dialog,
-  MockBrowserWindow as BrowserWindow,
-  MockSession as Session,
-  MockWebContents as WebContents,
-  MockWebRequest as WebRequest,
-  mockShell as shell,
+    MockDialog as dialog,
+    MockBrowserWindow as BrowserWindow,
+    MockSession as Session,
+    MockWebContents as WebContents,
+    MockWebRequest as WebRequest,
+    mockShell as shell,
 };
