@@ -5,17 +5,22 @@ what you need to know to get started hacking on Nativefier.
 
 ## Guidelines
 
-1. ~~**Before starting work on a huge change, gauge the interest**
+0. Thou shalt set `tabstop=4` and `expandtab`. If you don't know what those are,
+   you're using the wrong editor and it's not my problem. Pull requests with
+   fucked-up indentation will be closed. Yes, there is a massive commit that
+   fixed this once.
+
+2. ~~**Before starting work on a huge change, gauge the interest**
    of community & maintainers through a GitHub issue. For big changes,
    create a **[RFC](https://en.wikipedia.org/wiki/Request_for_Comments)**
    issue to enable a good peer review.~~ // The community no longer exists.
 
-2. ~~Do your best to **avoid adding new Nativefier command-line options**.
+3. ~~Do your best to **avoid adding new Nativefier command-line options**.
    If a new option is inevitable for what you want to do, sure,
    but as much as possible try to see if you change works without.
    Nativefier already has a ton of them, making it hard to use.~~ // This was asinine when brother came up with it and it's even dumber now.
 
-3. Do your best to **limit breaking changes**.
+4. Do your best to **limit breaking changes**.
    Only introduce breaking changes when necessary, when required by deps, or when
    not breaking would be unreasonable. When you can, support the old thing forever.
    For example, keep maintaining old flags; to "replace" an flag you want to replace
@@ -28,7 +33,7 @@ what you need to know to get started hacking on Nativefier.
    pushed by _all their software_ who think it's "just one breaking change".
    See [Rich Hickey - Spec-ulation](https://www.youtube.com/watch?v=oyLBGkS5ICk).
 
-4. **Avoid adding npm dependencies**. Each new dep is a complexity & security liability.
+5. **Avoid adding npm dependencies**. Each new dep is a complexity & security liability.
    You might be thinking your extra dep is _"just a little extra dep"_, and maybe
    you found one that is high-quality & dependency-less. Still, it's an extra dep,
    and over the life of Nativefier we requested changes to _dozens_ of PRs to avoid
@@ -39,7 +44,7 @@ what you need to know to get started hacking on Nativefier.
    Also, an in-tree helper will always be less complex than a dep, as inherently
    more tailored to our use case, and less complexity is good.
 
-5. If you do add dependencies, **unfuck them** because `node`'s dependency tracking is hot garbage from the ancient mists of time before software existed.
+6. If you do add dependencies, **unfuck them** because `node`'s dependency tracking is hot garbage from the ancient mists of time before software existed.
 
 5. Use **types**, avoid `any`, ~~write **tests**~~. // Bro, your tests are literally the first thing that wouldn't compile. Fuck you and your tests.
 
