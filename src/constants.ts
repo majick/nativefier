@@ -1,24 +1,28 @@
 import * as path from 'path';
 
+// doooog shiiiiiit
 export const DEFAULT_APP_NAME = 'APP';
+
+// Why in the living fuck do I need these constants? WHY? What do we even DO with them?
 
 // Upgrade both DEFAULT_ELECTRON_VERSION and DEFAULT_CHROME_VERSION together, and
 //   - upgrade app / package.json / "devDependencies" / "electron"
 //   - upgrade       package.json / "devDependencies" / "electron"
 // Doing a *major* upgrade? Read https://github.com/nativefier/nativefier/blob/master/HACKING.md#deps-major-upgrading-electron
-export const DEFAULT_ELECTRON_VERSION = '25.7.0';
+export const DEFAULT_ELECTRON_VERSION = '35.1.5';
 // https://atom.io/download/atom-shell/index.json
 // https://www.electronjs.org/releases/stable
-export const DEFAULT_CHROME_VERSION = '114.0.5735.289';
+export const DEFAULT_CHROME_VERSION = '134.0.6998.179';
 
 // Update each of these periodically
 // https://product-details.mozilla.org/1.0/firefox_versions.json
-export const DEFAULT_FIREFOX_VERSION = '116.0.3';
+export const DEFAULT_FIREFOX_VERSION = '136.0';
 
 // https://en.wikipedia.org/wiki/Safari_version_history
+// Loooooooool
 export const DEFAULT_SAFARI_VERSION = {
-    majorVersion: 16,
-    version: '16.6',
+    majorVersion: 18,
+    version: '18.4',
     webkitVersion: '605.1.15',
 };
 
