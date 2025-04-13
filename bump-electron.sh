@@ -7,11 +7,16 @@ if [ "$1" = "" ] ; then echo "$0: no new value" ; exit 1 ; fi
 
 TMPFILE=$(mktemp)
 # gonna want this for the sed
-cur_ver=$(jq -r '.devDependencies.electron' package.json)
+cur_electron=$(jq -r '.devDependencies.electron' package.json)
+cur_nativefier=$(jq -r '.version' package.json)
 
-# Tweak the json
-( jq -r ".devDependencies.electron = $1" package.json > $TMPFILE ) && \
-   mv $TMPFILE package.json
+new_semver=$( awk -F. '/[0-9]+\./{$NF++;print}' OFS=. <<< "${cur_nativefier}" )
 
-# Right now this is only src/constants.ts but who knows?
-find src -type f | xargs sed -i -e "s/${cur_ver}/$1/g"
+echo "Electron ${cur_electron} -> $1"
+echo "Nativefier ${cur_nativefier} -> ${new_semver}"
+
+# Tweak the json and source
+( jq -r  --arg new_elec "$1" --arg new_semver "${new_semver}" '.devDependencies.electron = $new_elec | .version = $new_semver' package.json > $TMPFILE ) \
+	&& mv $TMPFILE package.json \
+	&& find src -type f | xargs sed -i -e "s/${cur_electron}/$1/g"
+
