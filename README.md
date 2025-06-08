@@ -1,4 +1,16 @@
-Note: Nativefier is unmaintained by the original author, please see https://github.com/nativefier/nativefier/issues/1577. Since the alternatives are all complete shit — go ahead, use Safari single site apps, I dare you — it's forked to majick/nativefier. No, literally, the UX jank from Safari or Chrome apps is so not fucking worth it. I'd rather just maintain this code, even if just barely.
+# Project Status
+Note: Nativefier is unmaintained by the original author, please see https://github.com/nativefier/nativefier/issues/1577. Since the alternatives are all complete shit — go ahead, use Safari single site apps, I dare you — it's forked to majick/nativefier. No, literally, the UX jank from Safari or Chrome apps is so not fucking worth it. They just act like shitty tabs with less navigation. I'd rather just maintain this code, even if just barely.
+
+Let me be clear: **Yes, I am the maintainer of the Nativefier codebase and this is the maintained fork.**
+
+Anyway:
+* Only ever tested on macOS >15
+* Only ever tested on aarch64
+* By 'tested' I mean I run it on the sites I need it to. The actual test harness was broken when I got this thing and I have zero interest in maintaining an entire ass-backwards unit test infrastructure.
+* I don't know `node` or TypeScript at all so the whole thing is imposter syndrome fakery. Enjoy!
+* **No** bug reports, issues, or discussions are welcome at all. You may submit PRs but I'm not running some Open Source Community Project where I have any intention of interacting. I'm maintaining code I use personally and that's it.
+* Yes, it works and it uses current, modern Electron. I'll continue to bump it and ham-fistedly deal with breaking changes.
+* Note, the only actual sites I run this for are endpoints I have either total control over or have high trust because I could physically harm the person on the other end. So my threat model is different from yours and my mitigations are based on my actual life.
 
 # Nativefier
 
