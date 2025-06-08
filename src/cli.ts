@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 
-import electronPackager = require('electron-packager');
+import electronPackager = require('@electron/packager');
 import * as log from 'loglevel';
 import yargs from 'yargs';
 
@@ -545,8 +545,8 @@ export function initArgs(argv: string[]): yargs.Argv<RawOptions> {
         )
         .version()
         .help()
-        .group(['version', 'help'], 'Other Options')
-        .wrap(yargs.terminalWidth());
+        .group(['version', 'help'], 'Other Options');
+        //.wrap(yargs.terminalWidth());
 
     // We must access argv in order to get yargs to actually process args
     // Do this now to go ahead and get any errors out of the way

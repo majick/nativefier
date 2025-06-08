@@ -3,6 +3,7 @@ import path from 'path';
 
 import {
     BrowserWindow,
+    BaseWindow,
     clipboard,
     Menu,
     MenuItem,
@@ -129,20 +130,10 @@ export function generateMenu(
             {
                 label: 'Clear App Data',
                 click: (
-                    item: MenuItem,
-                    focusedWindow: BrowserWindow | undefined,
+                    menuItem: Electron.MenuItem,
+                    window: Electron.BaseWindow | undefined,
+                    event: Electron.KeyboardEvent
                 ): void => {
-                    log.debug('Clear App Data.click', {
-                        item,
-                        focusedWindow,
-                        mainWindow,
-                    });
-                    if (!focusedWindow) {
-                        focusedWindow = mainWindow;
-                    }
-                    clearAppData(focusedWindow).catch((err) =>
-                        log.error('clearAppData ERROR', err),
-                    );
                 },
             },
         ],
@@ -188,25 +179,25 @@ export function generateMenu(
                 enabled: mainWindow.isFullScreenable() || isOSX(),
                 visible: mainWindow.isFullScreenable() || isOSX(),
                 click: (
-                    item: MenuItem,
-                    focusedWindow: BrowserWindow | undefined,
+                    menuItem: MenuItem,
+                    window: BaseWindow | undefined,
                 ): void => {
-                    log.debug('Toggle Full Screen.click()', {
-                        item,
-                        focusedWindow,
-                        isFullScreen: focusedWindow?.isFullScreen(),
-                        isFullScreenable: focusedWindow?.isFullScreenable(),
-                    });
-                    if (!focusedWindow) {
-                        focusedWindow = mainWindow;
-                    }
-                    if (focusedWindow.isFullScreenable()) {
-                        focusedWindow.setFullScreen(
-                            !focusedWindow.isFullScreen(),
+                    //log.debug('Toggle Full Screen.click()', {
+                    //    item,
+                    //    focusedWindow,
+                    //    isFullScreen: focusedWindow?.isFullScreen(),
+                     //   isFullScreenable: focusedWindow?.isFullScreenable(),
+                    //});
+                    //if (!focusedWindow) {
+                    //    focusedWindow = mainWindow;
+                    //}
+                    if (mainWindow.isFullScreenable()) {
+                        mainWindow.setFullScreen(
+                            !mainWindow.isFullScreen(),
                         );
                     } else if (isOSX()) {
-                        focusedWindow.setSimpleFullScreen(
-                            !focusedWindow.isSimpleFullScreen(),
+                        mainWindow.setSimpleFullScreen(
+                            !mainWindow.isSimpleFullScreen(),
                         );
                     }
                 },
@@ -259,19 +250,20 @@ export function generateMenu(
                 label: 'Toggle Developer Tools',
                 accelerator: isOSX() ? 'Alt+Cmd+I' : 'Ctrl+Shift+I',
                 click: (
-                    item: MenuItem,
-                    focusedWindow: BrowserWindow | undefined,
+                    menuItem: Electron.MenuItem,
+                    window: Electron.BaseWindow | undefined,
+                    event: Electron.KeyboardEvent
                 ) => {
-                    log.debug('Toggle Developer Tools.click()', {
-                        item,
-                        focusedWindow,
-                    });
-                    if (!focusedWindow) {
-                        focusedWindow = mainWindow;
-                    }
-                    focusedWindow.webContents.toggleDevTools();
+                    //log.debug('Toggle Developer Tools.click()', {
+                    //    item,
+                    //    focusedWindow,
+                    //});
+                    //if (!focusedWindow) {
+                    //    focusedWindow = mainWindow;
+                    //}
+                    //focusedWindow.webContents.toggleDevTools();
                 },
-            },
+            }
         );
     }
 
