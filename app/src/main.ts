@@ -203,7 +203,7 @@ if (appArgs.lang) {
 let currentBadgeCount = 0;
 const setDockBadge = isOSX()
     ? (count?: number | string, bounce = false): void => {
-          if (count !== undefined) {
+          if (count !== undefined && app.dock ) {
               app.dock.setBadge(count.toString());
               if (
                   bounce &&

@@ -39,7 +39,7 @@ export async function getOptions(rawOptions: RawOptions): Promise<AppOptions> {
             appCopyright: rawOptions.appCopyright,
             appVersion: rawOptions.appVersion,
             arch: rawOptions.arch ?? inferArch(),
-            asar: rawOptions.asar ?? rawOptions.conceal ?? false,
+            asar: rawOptions.asar ?? rawOptions.conceal ?? false ?? undefined,
             buildVersion: rawOptions.buildVersion,
             darwinDarkModeSupport: rawOptions.darwinDarkModeSupport ?? false,
             dir: PLACEHOLDER_APP_DIR,
@@ -129,7 +129,7 @@ export async function getOptions(rawOptions: RawOptions): Promise<AppOptions> {
     if (options.nativefier.verbose) {
         log.setLevel('trace');
         try {
-            debug.enable('electron-packager');
+            debug.enable('@electron/packager');
         } catch (err: unknown) {
             log.error(
                 'Failed to enable electron-packager debug output. This should not happen,',

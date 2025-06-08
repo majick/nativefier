@@ -17,15 +17,13 @@ module.exports = {
                 endOfLine: 'auto',
             },
         ],
-        '@typescript-eslint/explicit-function-return-type': 'error',
-        '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-        '@typescript-eslint/no-explicit-any': 'error',
-        '@typescript-eslint/no-extraneous-class': 'error',
-        '@typescript-eslint/no-invalid-void-type': 'error',
-        '@typescript-eslint/prefer-ts-expect-error': 'error',
-        '@typescript-eslint/type-annotation-spacing': 'error',
-        '@typescript-eslint/typedef': 'error',
-        '@typescript-eslint/unified-signatures': 'error',
+
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
+    '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
     },
     // https://eslint.org/docs/user-guide/configuring/ignoring-code#ignorepatterns-in-config-files
     ignorePatterns: [

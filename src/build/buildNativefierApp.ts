@@ -1,7 +1,7 @@
 import * as path from 'path';
 
 import * as electronGet from '@electron/get';
-import electronPackager from 'electron-packager';
+import electronPackager from '@electron/packager';
 import * as fs from 'fs-extra';
 import * as log from 'loglevel';
 
