@@ -6,4 +6,4 @@ Use this to disable Cmd-[Minus] and Cmd-[Plus] to avoid stupid zoom keybinds
 
 ## nativefier.windows.js
 Use this to remember window positions. Taken from the docs (such as they are).
-`--injext nativefier.windows.js`
+`--inject nativefier.windows.js`
