@@ -16,4 +16,6 @@ Use this to __actually__ disable zoom keybinds.
 ```
 --inject nativefier.ignore-zoom.js
 ```
-Thx [actual dude](https://github.com/electron/electron/issues/8793#issuecomment-648307765) who waded through all the broken fucked up non-solutions that Electron themselves keep murdering. This is the thing that keeps accidental Cmd-Minus from firing. So that, y'know, you can type Option-Shift-Minus without fear of blowing up the window.
+
+The [actual dude](https://github.com/electron/electron/issues/8793#issuecomment-648307765) who waded through all the broken fucked up non-solutions that Electron themselves keep murdering. This is the thing that keeps accidental Cmd-Minus from firing. So that, y'know, you can type Option-Shift-Minus without fear of blowing up the window.
+
