@@ -3,8 +3,8 @@ import * as url from 'url';
 import * as log from 'loglevel';
 
 function appendProtocol(inputUrl: string): string {
-    const parsed = url.parse(inputUrl);
-    if (!parsed.protocol) {
+    const parsed = URL.parse(inputUrl);
+    if (parsed != null && !parsed.protocol) {
         const urlWithProtocol = `https://${inputUrl}`;
         log.warn(
             `URL "${inputUrl}" lacks a protocol.`,
@@ -21,7 +21,7 @@ export function normalizeUrl(urlToNormalize: string): string {
 
     let parsedUrl: url.URL;
     try {
-        parsedUrl = new url.URL(urlWithProtocol);
+        parsedUrl = new URL(urlWithProtocol);
     } catch (err: unknown) {
         log.error('normalizeUrl ERROR', err);
         throw new Error(`Your url "${urlWithProtocol}" is invalid`);
