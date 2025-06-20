@@ -206,26 +206,30 @@ export function generateMenu(
             },
             {
                 label: 'Zoom In',
-                accelerator: 'CmdOrCtrl+=',
+                // accelerator: 'CmdOrCtrl+=',
+                accelerator: undefined, // Fuck. You. Zoom.
                 click: zoomIn,
             },
             {
                 label: 'ZoomInAdditionalShortcut',
                 visible: false,
                 acceleratorWorksWhenHidden: true,
-                accelerator: 'CmdOrCtrl+numadd',
+                // accelerator: 'CmdOrCtrl+numadd',
+                accelerator: undefined, // Fuck. You. Zoom.
                 click: zoomIn,
             },
             {
                 label: 'Zoom Out',
-                accelerator: 'CmdOrCtrl+-',
+                // accelerator: 'CmdOrCtrl+-',
+                accelerator: undefined, // Fuck. You. Zoom.
                 click: zoomOut,
             },
             {
                 label: 'ZoomOutAdditionalShortcut',
                 visible: false,
                 acceleratorWorksWhenHidden: true,
-                accelerator: 'CmdOrCtrl+numsub',
+                // accelerator: 'CmdOrCtrl+numsub',
+                accelerator: undefined, // Fuck. You. Zoom.
                 click: zoomOut,
             },
             {
