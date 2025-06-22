@@ -60,7 +60,7 @@
     "@electron/packager": "",
     "asar": "^0.6.1",
     "axios": "^1.9.0",
-    "electron-context-menu": "^4.1.0",
+    "electron-window-state": "^5.0.3",
     "fs-extra": "^11.3.0",
     "gitcloud": "^0.2.4",
     "glob": "^11.0.2",
@@ -99,8 +99,7 @@
     "ts-loader": "^9.5.2",
     "typescript": "",
     "webpack": "",
-    "webpack-cli": "",
-    "electron-context-menu": ""
+    "webpack-cli": ""
   },
   "overrides": {
     "axios": "$axios"
