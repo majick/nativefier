@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Looooooool. I don't do any of this.
+
 # Updates the changelog and version in the package.json
 # Will also create a commit with these changes locally
 #
