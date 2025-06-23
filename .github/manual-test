@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
+
 # Manual test to validate some hard-to-programmatically-test features work.
+
+# Loooooool. Not only do I not do any of this, it literally *is* a programmatic test.
+# The fact that there's a shell script (a program) can do it means it's programmatic 
+# by definition.
+
 set -eo pipefail
 
 missingDeps=false
