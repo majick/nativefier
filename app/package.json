@@ -1,26 +1,26 @@
 {
-    "name": "nativefier-placeholder",
-    "version": "1.0.0",
-    "description": "Placeholder for the nativefier cli to override with a target url",
-    "main": "lib/main.js",
-    "author": "Jia Hao",
-    "license": "MIT",
-    "keywords": [
-        "desktop",
-        "electron",
-        "placeholder"
-    ],
-    "scripts": {},
-    "dependencies": {
-        "electron-context-menu": "",
-        "electron-dl": "",
-        "electron-squirrel-startup": "",
-        "electron-window-state": "",
-        "loglevel": "",
-        "source-map-support": "^0.5.21"
-    },
-    "devDependencies": {
-        "electron": "^36.2.1",
-        "electron-context-menu": ""
-    }
+  "name": "nativefier-placeholder",
+  "version": "53.0.12",
+  "description": "Placeholder for the nativefier cli to override with a target url",
+  "main": "lib/main.js",
+  "author": "Jia Hao",
+  "license": "MIT",
+  "keywords": [
+    "desktop",
+    "electron",
+    "placeholder"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "electron-context-menu": "",
+    "electron-dl": "",
+    "electron-squirrel-startup": "",
+    "electron-window-state": "",
+    "loglevel": "",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "electron": "37.1.0",
+    "electron-context-menu": ""
+  }
 }
