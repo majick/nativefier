@@ -21,10 +21,17 @@ echo "Nativefier ${cur_nativefier} -> ${new_semver}"
 	&& find src -type f | xargs sed -i -e "s/${cur_electron}/$1/g"
 	
 ( jq -r  --arg new_elec "$1" --arg new_semver "${new_semver}" '.devDependencies.electron = $new_elec | .version = $new_semver' app/package.json > $TMPFILE ) \
-	&& mv $TMPFILE package.json \
+	&& mv $TMPFILE app/package.json \
 	&& find src -type f | xargs sed -i -e "s/${cur_electron}/$1/g"
 
 # oh and DO IT AGAIN BECAUSE FUCK YOU HOW ABOUT AN ANNOYING BOM THING
 ( jq -r  --arg new_elec "$1" --arg new_semver "${new_semver}" '.devDependencies.electron = $new_elec | .version = $new_semver' app/npm-shrinkwrap.json > $TMPFILE ) \
 	&& mv $TMPFILE app/npm-shrinkwrap.json \
+	&& find src -type f | xargs sed -i -e "s/${cur_electron}/$1/g"
+
+
+
+# oh and DO IT AGAIN BECAUSE FUCK YOU HOW ABOUT AN ANNOYING BOM THING
+( jq -r  --arg new_elec "$1" --arg new_semver "${new_semver}" '.devDependencies.electron = $new_elec | .version = $new_semver' app/package.json > $TMPFILE ) \
+	&& mv $TMPFILE app/package.json \
 	&& find src -type f | xargs sed -i -e "s/${cur_electron}/$1/g"
