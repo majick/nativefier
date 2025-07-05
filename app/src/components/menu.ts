@@ -68,6 +68,8 @@ export function generateMenu(
         !zoom || zoom === 1.0
             ? 'Reset Zoom'
             : `Reset Zoom (to ${(zoom * 100).toFixed(1)}%, set at build time)`;
+            
+    const electronVersion = process.versions.electron;
 
     const editMenu: MenuItemConstructorOptions = {
         label: '&Edit',
@@ -289,7 +291,7 @@ export function generateMenu(
         role: 'help',
         submenu: [
             {
-                label: `Built with Nativefier v${nativefierVersion}`,
+                label: `Built with Nativefier v${nativefierVersion}, Electron v${electronVersion}`,
                 click: (): void => {
                     openExternal(
                         'https://github.com/nativefier/nativefier',
@@ -305,7 +307,7 @@ export function generateMenu(
                 label: 'Report an Issue',
                 click: (): void => {
                     openExternal(
-                        'https://github.com/nativefier/nativefier/issues',
+                        'https://gist.githubusercontent.com/majick/0c12c2370652d2fe78b07ff379a7bfa1/raw/34019323482293fa4f947a10cb3847fcfde93487/gistfile1.txt',
                     ).catch((err: unknown): void =>
                         log.error('Report an Issue.click ERROR', err),
                     );
