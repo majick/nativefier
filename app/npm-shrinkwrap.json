@@ -1,6 +1,6 @@
 {
   "name": "nativefier-placeholder",
-  "version": "53.0.13",
+  "version": "53.0.14",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -1355,6 +1355,6 @@
     }
   },
   "devDependencies": {
-    "electron": "37.2.0"
+    "electron": "37.2.1"
   }
 }
