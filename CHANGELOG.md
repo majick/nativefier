@@ -1,3 +1,13 @@
+# 53.0.x - 2025, The Year of the Snake
+
+- Under new management.
+- Maintenance releases with current stable Electron
+- Fixes to old dude's broken stuff
+- Fixes to old dude's weird habits he got from work
+- Ascerbic commit messages
+- Ascerbic documentation updates
+- A tremendous level of hate for someone else's overengineering
+
 # 52.0.0 / 2023-08-25
 
 **[BREAKING]**
