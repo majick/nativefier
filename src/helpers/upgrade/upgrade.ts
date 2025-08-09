@@ -64,7 +64,7 @@ function getAppRoot(
 
 function getIconPath(appResourcesDir: string): string | undefined {
     const icnsPath = path.join(appResourcesDir, '..', 'electron.icns');
-    if (fileExists(icnsPath)) {
+    if (fileExists(icnsPath as string)) {
         log.debug(`Found icon at: ${icnsPath}`);
         return path.resolve(icnsPath);
     }
@@ -235,5 +235,5 @@ export function useOldAppOptions(
 
     log.debug('Combined options', combinedOptions);
 
-    return combinedOptions;
+    return combinedOptions as RawOptions;
 }
