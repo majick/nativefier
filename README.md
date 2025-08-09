@@ -9,8 +9,10 @@ Anyway:
 * actually I lied I tested it on Debian once a long time ago
 * By 'tested' I mean I run it on the sites I need it to. The actual test harness was broken when I got this thing and I have zero interest in maintaining an entire ass-backwards unit test infrastructure.
 * I don't know `node` or TypeScript at all so the whole thing is imposter syndrome fakery. Enjoy!
+* Worse, I think I've come to loathe either TypeScript or how dude writes his TypeScript. Probably both. Strongly-typed languages are all well and good (read: terrible) and type safety is neat or whatever but *a language ecosystem that breaks its own damned types every few versions* is not well or good. It's diseased and it makes code unmaintainable and just forces me to cast stuff anyway.
+* So if it works, it's because it works for me.
 * **No** bug reports, issues, or discussions are welcome at all. You may submit PRs but I'm not running some Open Source Community Project where I have any intention of interacting. I'm maintaining code I use personally and that's it.
-* Yes, it works and it uses current, modern Electron. I'll continue to bump it and ham-fistedly deal with breaking changes.
+* Yes, it works for me and it uses current, modern Electron. I'll continue to bump it and ham-fistedly deal with breaking changes.
 * Note, the only actual sites I run this for are endpoints I have either total control over or have high trust because I could physically harm the person on the other end. So my threat model is different from yours and my mitigations are based on my actual life.
 
 # Nativefier
