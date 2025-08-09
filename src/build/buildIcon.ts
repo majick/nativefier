@@ -34,7 +34,7 @@ export function convertIconIfNecessary(options: AppOptions): void {
     }
 
     if (options.packager.platform === 'win32') {
-        if (iconIsIco(options.packager.icon)) {
+        if (iconIsIco(options.packager.icon as string)) {
             log.debug(
                 'Building for Windows and icon is already a .ico, no conversion needed',
             );
@@ -42,7 +42,7 @@ export function convertIconIfNecessary(options: AppOptions): void {
         }
 
         try {
-            const iconPath = convertToIco(options.packager.icon);
+            const iconPath = convertToIco(options.packager.icon as string);
             options.packager.icon = iconPath;
             return;
         } catch (err: unknown) {
@@ -52,7 +52,7 @@ export function convertIconIfNecessary(options: AppOptions): void {
     }
 
     if (options.packager.platform === 'linux') {
-        if (iconIsPng(options.packager.icon)) {
+        if (iconIsPng(options.packager.icon as string)) {
             log.debug(
                 'Building for Linux and icon is already a .png, no conversion needed',
             );
@@ -60,7 +60,7 @@ export function convertIconIfNecessary(options: AppOptions): void {
         }
 
         try {
-            const iconPath = convertToPng(options.packager.icon);
+            const iconPath = convertToPng(options.packager.icon as string);
             options.packager.icon = iconPath;
             return;
         } catch (err: unknown) {
@@ -69,7 +69,7 @@ export function convertIconIfNecessary(options: AppOptions): void {
         }
     }
 
-    if (iconIsIcns(options.packager.icon)) {
+    if (iconIsIcns(options.packager.icon as string)) {
         log.debug(
             'Building for macOS and icon is already a .icns, no conversion needed',
         );
@@ -83,12 +83,12 @@ export function convertIconIfNecessary(options: AppOptions): void {
     }
 
     try {
-        if (!iconIsIcns(options.packager.icon)) {
-            const iconPath = convertToIcns(options.packager.icon);
+        if (!iconIsIcns(options.packager.icon as string)) {
+            const iconPath = convertToIcns(options.packager.icon as string);
             options.packager.icon = iconPath;
         }
         if (options.nativefier.tray !== 'false') {
-            convertToTrayIcon(options.packager.icon);
+            convertToTrayIcon(options.packager.icon as string);
         }
     } catch (err: unknown) {
         log.warn('Failed to convert icon to .icns, skipping.', err);

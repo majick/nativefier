@@ -50,7 +50,7 @@ async function copyIconsIfNecessary(
             const trayIconFileName = `tray-icon.png`;
             const destIconPath = path.join(appPath, 'icon.png');
             await fs.copy(
-                `${path.dirname(options.packager.icon)}/${trayIconFileName}`,
+                `${path.dirname(options.packager.icon as string)}/${trayIconFileName}`,
                 destIconPath,
             );
         } else {
@@ -60,11 +60,11 @@ async function copyIconsIfNecessary(
     }
 
     // windows & linux: put the icon file into the app
-    const destFileName = `icon${path.extname(options.packager.icon)}`;
+    const destFileName = `icon${path.extname(options.packager.icon as string)}`;
     const destIconPath = path.join(appPath, destFileName);
 
     log.debug(`Copying icon ${options.packager.icon} to`, destIconPath);
-    await fs.copy(options.packager.icon, destIconPath);
+    await fs.copy(options.packager.icon as string, destIconPath);
 }
 
 /**

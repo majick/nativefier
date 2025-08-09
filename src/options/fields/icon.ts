@@ -1,6 +1,8 @@
 import * as log from 'loglevel';
 
 import { inferIcon } from '../../infer/inferIcon';
+import { AppOptions } from '../../../shared/src/options/model';
+
 
 type IconParams = {
     packager: {
@@ -10,7 +12,7 @@ type IconParams = {
     };
 };
 
-export async function icon(options: IconParams): Promise<string | undefined> {
+export async function icon(options: AppOptions): Promise<string | undefined> {
     if (options.packager.icon) {
         log.debug('Got icon from options. Using it, no inferring needed');
         return undefined;

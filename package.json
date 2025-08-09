@@ -61,6 +61,7 @@
     "asar": "^0.6.1",
     "axios": "^1.9.0",
     "electron-window-state": "^5.0.3",
+    "electron-context-menu": "",
     "fs-extra": "^11.3.0",
     "gitcloud": "^0.2.4",
     "glob": "^11.0.2",

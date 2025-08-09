@@ -21,6 +21,8 @@ export function initContextMenu(
     log.debug('initContextMenu');
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    /*
+     * I swear to god this worked literally 24 hours ago. Like, the import is RIGHT THERE
     contextMenu({
         prepend: (actions: contextMenu.Actions, params: ContextMenuParams) => {
             log.debug('contextMenu.prepend', { actions, params });
@@ -87,4 +89,5 @@ export function initContextMenu(
         showCopyImageAddress: true,
         showSaveImage: true,
     });
+    */
 }
