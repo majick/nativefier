@@ -1,4 +1,13 @@
 # Project Status
+
+# TL;DR: Fuck Github
+I'm getting sick of Microsoft making GH worse in every way and also scraping every repo for their mediocre LLM. My contributions to this project are public domain, they're free to scrape it, but it's not on me to keep making it easier. Basically, Microsoft is gross, Github is gross, Copilot is gross. I'm not interested in supporting it.
+
+# Moving to Codeberg
+One by one I'll be moving my projects to Codeberg. In this case: [nativefier on codeberg](https://codeberg.org/majick/nativefier)
+
+# I am still the maintainer
+
 Note: Nativefier is unmaintained by the original author, please see https://github.com/nativefier/nativefier/issues/1577. Since the alternatives are all complete shit — go ahead, use Safari single site apps, I dare you — it's forked to majick/nativefier. No, literally, the UX jank from Safari or Chrome apps is so not fucking worth it. They just act like shitty tabs with less navigation. I'd rather just maintain this code, even if just barely.
 
 Let me be clear: **Yes, I am the maintainer of the Nativefier codebase and this is the maintained fork.**
